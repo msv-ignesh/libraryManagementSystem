@@ -31,7 +31,7 @@ public class bookWebController {
     public String showBooks(Model model) {
 
         model.addAttribute(
-                "book",
+                "books",
                 bookService.getAllBooks()
         );
 
