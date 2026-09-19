@@ -6,6 +6,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 
 @Entity
 public class Book {
@@ -13,18 +15,20 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @NotBlank 
     private String title;
 
     @ManyToOne 
     @JoinColumn(name = "author_id")
     private Author author;
-    private float price;
+    @NotBlank
+    @Positive
+    private Double price;
 
     public Book() {
     }
 
-    public Book(String title, Author author, float price) {
+    public Book(String title, Author author, Double price) {
         this.title = title;
         this.author = author;
         this.price = price;
@@ -54,11 +58,11 @@ public class Book {
         this.author = author;
     }
 
-    public float getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Add New Book</h1>
+
+    <form
+        th:action="@{/books/save}"
+        th:object="${book}"
+        method="post">
+
+        <div class="form-group">
+            <label>Book Title</label>
+            <input
+                type="text"
+                th:field="*{title}">
+            <p
+                class="error"
+                th:if="${#fields.hasErrors('title')}"
+                th:errors="*{title}">
+            </p>
+        </div>
+
+        <div class="form-group">
+            <label>Price</label>
+            <input
+                type="number"
+                step="0.01"
+                th:field="*{price}">
+            <p
+                class="error"
+                th:if="${#fields.hasErrors('price')}"
+                th:errors="*{price}">
+            </p>
+        </div>
+
+        <div class="form-group">
+            <label>Author</label>
+            <select name="authorId" required>
+                <option value="" disabled selected>Select an Author</option>
+                <option
+                    th:each="author : ${authors}"
+                    th:value="${author.id}"
+                    th:text="${author.name}">
+                </option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn">
+            Save Book
+        </button>
+
+        <a href="/books" class="cancel">
+            Cancel
+        </a>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>
