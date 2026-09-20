@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Library Management System</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+
+<div class="admin-container">
+
+    <!-- Header -->
+
+    <header class="admin-header">
+
+        <div>
+            <h1>ADMIN PANEL</h1> 
+            
+        </div>
+            
+
+    </header>
+
+
+    <!-- Navigation Cards -->
+
+    <main class="admin-content">
+
+        <h2>Library Management System</h2>
+
+        <div class="management-grid">
+
+
+            <!-- BOOKS -->
+            <a href="/books" class="management-card">
+
+                <div class="card-icon">
+                    📚
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Books</h3>
+
+                    <p>Manage books, authors and prices</p>
+
+                    <div>
+            
+                        <span class="access-btn">
+                        
+                        Access Books →
+                        </span>
+                        
+                    </div>
+                    
+                
+
+                </div>
+                </a>
+            
+            
+
+
+            <!-- AUTHORS -->
+
+            <a href="/authors-ui" class="management-card">
+
+                <div class="card-icon">
+                    ✍️
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Authors</h3>
+
+                    <p>
+                        Author management
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- MEMBERS -->
+
+            <a href="/members-ui" class="management-card">
+
+                <div class="card-icon">
+                    👥
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Members</h3>
+
+                    <p>
+                        Member management
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            Library Management System
+        </p>
+
+    </footer>
+
+</div>
+
+</body>
+
+</html>
