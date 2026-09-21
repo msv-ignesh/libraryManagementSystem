@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Members Management</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <a href="/" class="back-btn">
+        ← Go Back
+    </a>
+
+    <h1>Members Management</h1>
+
+    <a href="/members-ui/new" class="btn">+ Add New Member</a>
+
+    <table>
+
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr th:each="member : ${members}">
+
+            <td th:text="${member.id}">1</td>
+
+            <td th:text="${member.name}">
+                Vignesh
+            </td>
+
+            <td th:text="${member.email}">
+                vignesh@gmail.com
+            </td>
+
+            <td th:text="${member.phone}">
+                9876543210
+            </td>
+
+            <td>
+
+                <a class="edit"
+                   th:href="@{/members-ui/edit/{id}(id=${member.id})}">
+                    Edit
+                </a>
+
+                <a class="delete"
+                   th:href="@{/members-ui/delete/{id}(id=${member.id})}"
+                   onclick="return confirm('Are you sure you want to delete this member?')">
+                    Delete
+                </a>
+
+            </td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+    <p th:if="${#lists.isEmpty(members)}">
+        No members available.
+    </p>
+
+</div>
+
+</body>
+</html>

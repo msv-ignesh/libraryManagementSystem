@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController 
-@RequestMapping("/authors")
+@RequestMapping("/api/authors")
 public class authorController {
     private final authorService service;
     public authorController(authorService service) {

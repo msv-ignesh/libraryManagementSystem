@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController 
-@RequestMapping("/members")
+@RequestMapping("/api/members")
 public class memberController {
     private final memberService service;
     public memberController(memberService service) {

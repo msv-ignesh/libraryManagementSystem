@@ -11,13 +11,4 @@ public class WebController {
         return "index";
     }
 
-    @GetMapping("/authors-ui")
-    public String authors() {
-        return "authors";
-    }
-
-    @GetMapping("/members-ui")
-    public String members() {
-        return "members";
-    }
 }

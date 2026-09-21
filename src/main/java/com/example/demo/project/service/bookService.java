@@ -2,6 +2,7 @@ package com.example.demo.project.service;
 
 import org.springframework.stereotype.Service;
 import com.example.demo.project.repository.bookRepository;
+import com.example.demo.project.model.Author;
 import com.example.demo.project.model.Book;
 
 import java.util.List;
@@ -41,5 +42,11 @@ public class bookService {
             throw new RuntimeException("Book not found");
         }
         repository.deleteById(id);
+    }
+
+    public long countBooksByAuthor(Author author) {
+        
+        return repository.countByAuthor(author);
+
     }
 }
