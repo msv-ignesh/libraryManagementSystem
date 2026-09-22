@@ -1,4 +1,4 @@
-package com.example.demo.project.controller;
+package com.example.demo.project.controller.webUI;
 
 import com.example.demo.project.model.Author;
 import com.example.demo.project.service.authorService;
@@ -46,7 +46,7 @@ public class authorWebController {
 
         model.addAttribute("bookCounts", bookCounts);
 
-        return "author";
+        return "authors/author";
     }
 
     // Show Add Author form
@@ -55,7 +55,7 @@ public class authorWebController {
 
         model.addAttribute("author", new Author());
 
-        return "addAuthor";
+        return "authors/addAuthor";
     }
 
     // Save new author
@@ -78,7 +78,7 @@ public class authorWebController {
 
         model.addAttribute("author", author);
 
-        return "editAuthor";
+        return "authors/editAuthor";
     }
 
     // Update author

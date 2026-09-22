@@ -1,4 +1,4 @@
-package com.example.demo.project.controller;
+package com.example.demo.project.controller.postman;
 
 import com.example.demo.project.model.Author;
 import com.example.demo.project.service.authorService;

@@ -1,4 +1,4 @@
-package com.example.demo.project.controller;
+package com.example.demo.project.controller.webUI;
 
 import com.example.demo.project.model.Member;
 import com.example.demo.project.service.memberService;
@@ -20,14 +20,14 @@ public class memberWebController {
     @GetMapping
     public String showMembers(Model model) {
         model.addAttribute("members", memberService.getAllMembers());
-        return "member";
+        return "members/member";
     }
 
     // Show Add Member form
     @GetMapping("/new")
     public String showAddMemberForm(Model model) {
         model.addAttribute("member", new Member());
-        return "addMember";
+        return "members/addMember";
     }
 
     // Save new member
@@ -49,7 +49,7 @@ public class memberWebController {
 
         model.addAttribute("member", member);
 
-        return "editMember";
+        return "members/editMember";
     }
 
     // Update member

@@ -1,4 +1,4 @@
-package com.example.demo.project.controller;
+package com.example.demo.project.controller.webUI;
 
 import com.example.demo.project.model.Author;
 import com.example.demo.project.model.Book;
@@ -38,7 +38,7 @@ public class bookWebController {
                 bookService.getAllBooks()
         );
 
-        return "book";
+        return "books/book";
     }
 
 
@@ -52,7 +52,7 @@ public class bookWebController {
                 authorService.getAllAuthors()
         );
 
-        return "addBook";
+        return "books/addBook";
     }
 
 
@@ -70,7 +70,7 @@ public class bookWebController {
                     authorService.getAllAuthors()
             );
 
-            return "addBook";
+            return "books/addBook";
         }
 
         Author author = authorService.getAuthorById(authorId);
@@ -96,7 +96,7 @@ public class bookWebController {
                 authorService.getAllAuthors()
         );
 
-        return "editBook";
+        return "books/editBook";
     }
 
 
@@ -115,7 +115,7 @@ public class bookWebController {
                     authorService.getAllAuthors()
             );
 
-            return "editBook";
+            return "books/editBook";
         }
 
         Author author = authorService.getAuthorById(authorId);
