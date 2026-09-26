@@ -1,16 +1,46 @@
+/* =========================================
+   LIGHT MODERN LIBRARY THEME
+========================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --white: #ffffff;
+    --background: #f3f4f6;
+    --ash: #e5e7eb;
+    --light-gray: #f8f9fa;
+
+    --charcoal: #25282d;
+    --dark-gray: #3f444a;
+    --gray: #6b7280;
+
+    --accent: #64748b;
+    --accent-light: #e2e8f0;
+
+    --danger: #dc2626;
+    --success: #4b5563;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6f9;
-    color: #1f2937;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--charcoal);
     min-height: 100vh;
 }
 
+
+/* =========================================
+   ADMIN CONTAINER
+========================================= */
 
 .admin-container {
     min-height: 100vh;
@@ -19,40 +49,58 @@ body {
 }
 
 
+/* =========================================
+   HEADER
+========================================= */
+
 .admin-header {
-    background: #111827;
-    color: white;
-    padding: 28px 6%;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    background: var(--white);
+    color: var(--charcoal);
+
+    padding: 35px 8%;
+
+    border-bottom: 1px solid var(--ash);
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
 }
 
 .admin-header h1 {
-    font-size: 28px;
-    margin-bottom: 5px;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 .admin-header p {
-    color: #545962;
-    font-size: 20px;
-    margin-left: auto;
+    margin-top: 7px;
+    color: var(--gray);
+    font-size: 14px;
 }
 
 
+/* =========================================
+   ADMIN CONTENT
+========================================= */
+
 .admin-content {
-    width: 90%;
-    max-width: 1150px;
+    width: 84%;
+    max-width: 1200px;
+
     margin: 50px auto;
+
     flex: 1;
-    justify-content: center;
 }
 
 .admin-content h2 {
-    font-size: 30px;
-    margin-bottom: 25px;
+    font-size: 26px;
+    color: var(--charcoal);
+    margin-bottom: 28px;
+    font-weight: 700;
 }
 
+
+/* =========================================
+   MANAGEMENT GRID
+========================================= */
 
 .management-grid {
     display: grid;
@@ -60,243 +108,421 @@ body {
     gap: 25px;
 }
 
+
+/* =========================================
+   MANAGEMENT CARD
+========================================= */
+
 .management-card {
-    background: white;
-    border-radius: 12px;
+    background: var(--white);
+
+    border: 1px solid var(--ash);
+
+    border-radius: 14px;
+
     padding: 30px;
-    text-decoration: none;
-    color: #1f2937;
 
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    min-height: 265px;
 
-    border: 1px solid #e5e7eb;
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.05);
 
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.management-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #cbd5e1;
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.09);
 }
 
 
-.card-icon {
-    width: 65px;
-    height: 65px;
+/* =========================================
+   CARD ICON
+========================================= */
 
-    border-radius: 12px;
+.card-icon {
+    width: 62px;
+    height: 62px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    font-size: 30px;
+    background: var(--light-gray);
 
-    background: #eef2ff;
+    border: 1px solid var(--ash);
+
+    border-radius: 12px;
+
+    font-size: 29px;
+
+    margin-bottom: 22px;
 }
 
 
+/* =========================================
+   CARD CONTENT
+========================================= */
+
 .card-content h3 {
-    font-size: 21px;
-    margin-bottom: 7px;
+    font-size: 22px;
+
+    color: var(--charcoal);
+
+    margin-bottom: 9px;
 }
 
 .card-content p {
-    color: #6b7280;
+    color: var(--gray);
+
     font-size: 14px;
-    margin-bottom: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 22px;
 }
 
+
+/* =========================================
+   ACCESS BUTTON
+========================================= */
 
 .access-btn {
     display: inline-block;
 
-    padding: 7px 12px;
+    padding: 10px 17px;
 
-    background: #2563eb;
+    background: #737883;
+
     color: white;
 
-    border-radius: 6px;
+    border-radius: 7px;
+
+    text-decoration: none;
 
     font-size: 13px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 
-    transition: transform 0.2s ease,
-                box-shadow 0.2s ease;
+    font-weight: 600;
+
+    transition: all 0.2s ease;
 }
+
 .access-btn:hover {
-    background: #1d4ed8;
-    transform: translateY(-5px);
+    background: var(--charcoal);
 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
 
-.coming-soon {
-    display: inline-block;
+/* =========================================
+   LARGE QUOTE
+========================================= */
 
-    padding: 7px 12px;
+.library-quote {
+    margin-top: 45px;
 
-    background: #f3f4f6;
-    color: #6b7280;
+    padding: 45px 55px;
 
-    border-radius: 6px;
+    background: var(--white);
+
+    border: 1px solid var(--ash);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.04);
+
+    text-align: center;
+}
+
+.library-quote p {
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    line-height: 1.35;
+
+    letter-spacing: -0.7px;
+
+    color: var(--charcoal);
+}
+
+.library-quote span {
+    display: block;
+
+    margin-top: 18px;
+
+    color: var(--gray);
 
     font-size: 13px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
 }
 
+
+/* =========================================
+   FOOTER
+========================================= */
 
 footer {
+    background: var(--white);
+
+    color: var(--gray);
+
     text-align: center;
 
     padding: 20px;
 
-    color: #9ca3af;
+    border-top: 1px solid var(--ash);
 
     font-size: 13px;
 }
 
 
-.empty-page {
-    width: 90%;
-    max-width: 700px;
+/* =========================================
+   GENERAL CONTAINER
+========================================= */
 
-    margin: 100px auto;
+.container {
+    width: 92%;
 
-    background: white;
+    max-width: 1200px;
 
-    padding: 60px;
+    margin: 45px auto;
 
-    text-align: center;
+    background: var(--white);
 
-    border-radius: 12px;
+    padding: 35px;
 
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+
+    border: 1px solid var(--ash);
+
+    box-shadow:
+        0 6px 25px rgba(0, 0, 0, 0.05);
 }
 
-.empty-page h1 {
-    margin-bottom: 15px;
+.container h1 {
+    color: var(--charcoal);
+
+    font-size: 28px;
+
+    margin-bottom: 25px;
+
+    font-weight: 700;
 }
 
-.empty-page p {
-    color: #6b7280;
-    margin-bottom: 30px;
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-btn {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 8px 14px;
+
+    background: var(--light-gray);
+
+    color: var(--dark-gray);
+
+    border: 1px solid var(--ash);
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    transition: 0.2s ease;
 }
 
+.back-btn:hover {
+    background: var(--ash);
+
+    color: var(--charcoal);
+}
+
+
+/* =========================================
+   MAIN BUTTON
+========================================= */
 
 .btn {
     display: inline-block;
 
-    padding: 11px 18px;
+    padding: 10px 18px;
 
-    background: #2563eb;
+    background: var(--charcoal);
 
     color: white;
-
-    text-decoration: none;
 
     border: none;
 
     border-radius: 7px;
 
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
     cursor: pointer;
 
-    font-size: 14px;
+    transition: 0.2s ease;
 }
 
 .btn:hover {
-    background: #1d4ed8;
+    background: #111827;
+
+    transform: translateY(-2px);
 }
 
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-
-    margin: 50px auto;
-
-    background: white;
-
-    padding: 30px;
-
-    border-radius: 12px;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.container h1 {
-    text-align: center;
-
-    margin-bottom: 30px;
-
-    font-size: 30px;
-}
-
+/* =========================================
+   TABLE
+========================================= */
 
 table {
     width: 100%;
 
     border-collapse: collapse;
 
-    margin-top: 25px;
+    margin-top: 28px;
+
+    background: var(--white);
+
+    border: 1px solid var(--ash);
+
+    border-radius: 10px;
+
+    overflow: hidden;
 }
 
 thead {
-    background: #1f2937;
+    background: #f1f3f5;
 
-    color: white;
+    color: var(--charcoal);
 }
 
-th,
-td {
-    padding: 14px;
+th {
+    padding: 15px;
 
     text-align: left;
 
-    border-bottom: 1px solid #e5e7eb;
+    font-size: 13px;
+
+    font-weight: 700;
+
+    border-bottom: 1px solid var(--ash);
+}
+
+td {
+    padding: 14px 15px;
+
+    border-bottom: 1px solid #edf0f2;
+
+    font-size: 14px;
+
+    color: var(--dark-gray);
+}
+
+tbody tr {
+    transition: background 0.2s ease;
 }
 
 tbody tr:hover {
-    background: #f8fafc;
+    background: #f8f9fa;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
 }
 
 
-.edit,
+/* =========================================
+   EDIT BUTTON
+========================================= */
+
+.edit {
+    display: inline-block;
+
+    padding: 7px 12px;
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    margin-right: 5px;
+
+    transition: 0.2s;
+}
+
+.edit:hover {
+    background: #e2e8f0;
+
+    color: #1e293b;
+}
+
+
+/* =========================================
+   DELETE BUTTON
+========================================= */
+
 .delete {
     display: inline-block;
 
     padding: 7px 12px;
 
-    border-radius: 5px;
+    background: #fef2f2;
+
+    color: var(--danger);
+
+    border: 1px solid #fecaca;
+
+    border-radius: 6px;
 
     text-decoration: none;
 
-    font-size: 13px;
+    font-size: 12px;
 
-    margin-right: 5px;
-}
-
-.edit {
-    background: #16a34a;
-
-    color: white;
-}
-
-.edit:hover {
-    background: #15803d;
-}
-
-.delete {
-    background: #dc2626;
-
-    color: white;
+    transition: 0.2s;
 }
 
 .delete:hover {
-    background: #b91c1c;
+    background: var(--danger);
+
+    color: white;
 }
 
 
+/* =========================================
+   FORMS
+========================================= */
+
 form {
     max-width: 600px;
-
-    margin: 0 auto;
 }
 
 .form-group {
@@ -308,57 +534,76 @@ form {
 
     margin-bottom: 7px;
 
-    font-weight: bold;
+    color: var(--dark-gray);
+
+    font-size: 14px;
+
+    font-weight: 600;
 }
 
 input,
 select {
     width: 100%;
 
-    padding: 12px;
+    padding: 12px 14px;
+
+    background: var(--white);
+
+    color: var(--charcoal);
 
     border: 1px solid #d1d5db;
 
     border-radius: 7px;
 
-    font-size: 15px;
+    font-size: 14px;
 
     outline: none;
 
-    background: white;
+    transition: 0.2s;
 }
 
 input:focus,
 select:focus {
-    border-color: #2563eb;
+    border-color: #94a3b8;
 
-    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
+    box-shadow:
+        0 0 0 3px rgba(148, 163, 184, 0.15);
 }
 
+
+/* =========================================
+   CANCEL
+========================================= */
 
 .cancel {
     display: inline-block;
 
     margin-left: 10px;
 
-    padding: 11px 18px;
+    padding: 10px 16px;
 
-    background: #6b7280;
-
-    color: white;
+    color: var(--gray);
 
     text-decoration: none;
 
     border-radius: 7px;
+
+    font-size: 13px;
 }
 
 .cancel:hover {
-    background: #4b5563;
+    background: var(--light-gray);
+
+    color: var(--charcoal);
 }
 
 
+/* =========================================
+   ERROR
+========================================= */
+
 .error {
-    color: #dc2626;
+    color: var(--danger);
 
     font-size: 13px;
 
@@ -366,70 +611,66 @@ select:focus {
 }
 
 
+/* =========================================
+   RESPONSIVE
+========================================= */
+
 @media (max-width: 850px) {
 
     .management-grid {
         grid-template-columns: 1fr;
     }
 
-    .admin-content {
-        margin-top: 30px;
-    }
-}
-
-@media (max-width: 600px) {
-
     .admin-header {
-        padding: 22px;
+        padding: 28px 6%;
     }
 
     .admin-header h1 {
-        font-size: 22px;
+        font-size: 27px;
     }
 
     .admin-content {
-        width: 94%;
+        width: 90%;
     }
 
     .container {
-        width: 95%;
-        padding: 20px;
-        margin: 25px auto;
+        padding: 25px;
     }
 
     table {
         display: block;
+
         overflow-x: auto;
+
         white-space: nowrap;
     }
 
-    .empty-page {
-        width: 90%;
-        padding: 40px 20px;
+    .library-quote p {
+        font-size: 24px;
     }
 }
 
 
-.back-btn {
-    display: inline-block;
+@media (max-width: 500px) {
 
-    margin-bottom: 20px;
+    .admin-header h1 {
+        font-size: 23px;
+    }
 
-    padding: 8px 14px;
+    .admin-content {
+        margin: 35px auto;
+    }
 
-    background: #6b7280;
+    .library-quote {
+        padding: 30px 20px;
+    }
 
-    color: white;
+    .library-quote p {
+        font-size: 20px;
+    }
 
-    text-decoration: none;
-
-    border-radius: 6px;
-
-    font-size: 14px;
-
-    transition: background 0.2s ease;
-}
-
-.back-btn:hover {
-    background: #4b5563;
+    .container {
+        width: 94%;
+        padding: 20px;
+    }
 }
